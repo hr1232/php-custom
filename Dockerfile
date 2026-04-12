@@ -27,6 +27,8 @@ RUN docker-php-ext-install -j$(nproc) \
     intl \
     mbstring \
     mysqli \
+    pdo_mysql \
+    pdo_pgsql \
     pgsql \
     soap \
     xsl \
