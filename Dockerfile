@@ -24,5 +24,5 @@ RUN docker-php-ext-install -j$(nproc) \
     pgsql \
     soap \
     xsl \
-    zip
-RUN docker-php-ext-enable curl ctp fileinfo sqlite3
+    zip \
+    opcache
