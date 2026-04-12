@@ -3,7 +3,6 @@ FROM php:8.4-apache
 # System dependencies
 RUN apt-get update && apt-get install -y \
     libbz2-dev \
-    libcurl4-openssl-dev \
     libicu-dev \
     libonig-dev \
     libpq-dev \
@@ -16,6 +15,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
+RUN docker-php-ext-configure zip
 RUN docker-php-ext-install -j$(nproc) \
-    bz2 curl ftp fileinfo intl mbstring mysqli \
-    pgsql soap sqlite3 tidy xsl zip
+    bz2 \
+    intl \
+    mbstring \
+    mysqli \
+    pgsql \
+    soap \
+    xsl \
+    zip
+RUN docker-php-ext-enable curl ctp fileinfo sqlite3
