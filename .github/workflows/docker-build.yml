@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
   schedule:
-    - cron: '0 3 * * *'  # täglich um 03:00 UTC
+    - cron: '0 1 * * *'  # täglich um 01:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repo auschecken
+      - name: Repo Checkout
         uses: actions/checkout@v4
 
       - name: Docker Hub Login
