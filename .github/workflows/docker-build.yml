@@ -31,4 +31,4 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/i386
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/php-custom:latest
+            ${{ secrets.DOCKER_USERNAME }}/php-custom:latest
