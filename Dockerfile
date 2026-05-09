@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
+    libmagickwand-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
@@ -24,6 +25,7 @@ RUN docker-php-ext-configure gd \
     --with-jpeg
 RUN docker-php-ext-install -j$(nproc) \
     bz2 \
+    exif \
     intl \
     mbstring \
     mysqli \
@@ -35,3 +37,5 @@ RUN docker-php-ext-install -j$(nproc) \
     zip \
     gd \
     opcache
+RUN pecl install imagick \
+    && docker-php-ext-enable imagick
