@@ -1,5 +1,4 @@
 FROM php:8.4-apache
-RUN docker-php-ext-install imap
 
 # System dependencies
 RUN apt-get update && apt-get install -y \
@@ -18,7 +17,6 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libmagickwand-dev \
     libc-client2007e-dev \
-    libkrb5-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
@@ -26,9 +24,6 @@ RUN docker-php-ext-configure zip
 RUN docker-php-ext-configure gd \
     --with-freetype \
     --with-jpeg
-RUN docker-php-ext-configure imap \
-    --with-kerberos \
-    --with-imap-ssl
 RUN docker-php-ext-install -j$(nproc) \
     bz2 \
     exif \
