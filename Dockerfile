@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libmagickwand-dev \
     libc-client2007e-dev \
-    libkrb5-dev
+    libkrb5-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
