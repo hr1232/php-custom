@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     libmagickwand-dev \
-    libc-client2007e-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
