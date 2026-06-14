@@ -1,5 +1,5 @@
 FROM php:8.4-apache
-docker-php-ext-install imap
+RUN docker-php-ext-install imap
 
 # System dependencies
 RUN apt-get update && apt-get install -y \
